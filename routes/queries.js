@@ -1,4 +1,5 @@
 var promise = require('bluebird');
+require('dotenv').load();
 
 var options = {
   // Initialization Options
@@ -6,11 +7,11 @@ var options = {
 };
 
 var connection = {
-  host: 'localhost',
-  port: '32768',
-  database: 'todolist',
-  user: 'postgres',
-  password: 'machinarium021'
+  host: process.env.PGHOST,
+  port: process.env.PGPORT,
+  database: process.env.PGDB,
+  user: process.env.PGUSER,
+  password: process.env.PGPASSWORD
 }
 
 var pgp = require('pg-promise')(options);
