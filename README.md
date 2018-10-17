@@ -36,7 +36,8 @@ npm install
 ### Create
 
 ```bash
-curl --data 'taskname=sacar la basura&taskdate=2018-10-18&picture=&priority=baja&description=test de createTask&place=en casa' \ http://localhost:3000/api/tasks
+curl --data 'taskname=sacar la basura&taskdate=2018-10-18&picture=&priority=baja&description=test de createTask&place=en casa' \
+http://localhost:3000/api/tasks
 ```
 
 ### Get all tasks
@@ -57,4 +58,9 @@ curl http://localhost:3000/api/tasks/1
 curl -X DELETE http://localhost:3000/api/tasks/1
 ```
 
-### Update (still pending)
+### Update task (all values based in ID)
+
+```bash
+curl -X PUT --data "taskname=podar el jardin&taskdate=2018-12-12&picture=&priority=baja&description=update prueba&place=en casa" \
+http://localhost:3000/api/tasks/3
+```
